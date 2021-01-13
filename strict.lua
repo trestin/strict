@@ -2,6 +2,7 @@
 -- All global variables must be declared througt 'global_variable' function
 -- (even asssigning nil will do) before being used.
 -- usage : global_variable("a", 1)
+-- checks duplicate global variable
 --         global_variable("b)
 --
 
@@ -23,6 +24,9 @@ mt.__newindex = function(t, n, v)
 end
 
 function global_variable(n, v)
+  if declared[n] then
+    error("re-declare variable '"..n.."'", 2)
+  end
   declared[n] = true
   rawset(_G, n, v)
 end
