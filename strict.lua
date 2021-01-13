@@ -1,8 +1,8 @@
 --
 -- All global variables must be declared througt 'global_variable' function
 -- (even asssigning nil will do) before being used.
--- usage : global_variable("a", 1)
 -- checks duplicate global variable
+-- usage : global_variable("a", 1)
 --         global_variable("b)
 --
 
