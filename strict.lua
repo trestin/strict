@@ -17,7 +17,7 @@ if mt == nil then
 end
 
 mt.__newindex = function(t, n, v)
-  if not declared[n] and type(v) ~= "function" then
+  if type(v) ~= "function" then
     error("assign to undeclared variable '"..n.."'", 2)
   end
   rawset(t, n, v)
